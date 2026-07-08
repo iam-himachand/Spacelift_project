@@ -1,0 +1,11 @@
+users:
+  - himachand
+  - bunny
+
+packages:
+  - vim
+  - git
+  - curl
+  - wget
+  - unzip
+

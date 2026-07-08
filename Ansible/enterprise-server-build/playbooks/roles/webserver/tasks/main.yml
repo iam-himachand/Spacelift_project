@@ -1,0 +1,19 @@
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for roles/webserver
+- name: Install Apache web server
+  apt:
+    name: apache2
+    state: present
+    update_cache: yes
+
+- name: copy index.html to web server root
+  copy:
+    src: index.html
+    dest: /var/www/html/index.html
+    owner: root
+    group: root
+    mode: '0644'
+
+  notify:
+    - restart apache
